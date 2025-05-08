@@ -2,6 +2,8 @@
 import os
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'  # Suppress TF logging
 import numpy as np
+import matplotlib
+matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
@@ -50,7 +52,8 @@ plt.ylabel('Accuracy')
 plt.legend()
 
 plt.tight_layout()
-plt.show()
+plt.savefig('training_history.png')
+plt.close()
 
 # Print final test accuracy
 loss, acc = model.evaluate(X_test, y_test, verbose=0)
