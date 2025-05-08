@@ -1,9 +1,9 @@
-
 import os
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'  # Suppress TF logging
 import numpy as np
+# Configure matplotlib for headless environment
 import matplotlib
-matplotlib.use('Agg')
+matplotlib.use('Agg')  # Set backend before importing pyplot
 import matplotlib.pyplot as plt
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
@@ -52,7 +52,7 @@ plt.ylabel('Accuracy')
 plt.legend()
 
 plt.tight_layout()
-plt.savefig('training_history.png')
+plt.savefig('model_training_plots.png', dpi=300, bbox_inches='tight')
 plt.close()
 
 # Print final test accuracy
