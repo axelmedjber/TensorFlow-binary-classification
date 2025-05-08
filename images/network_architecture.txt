@@ -1,0 +1,9 @@
+
+[Input Layer]     [Hidden Layer]    [Output Layer]
+(30 features)     (32 neurons)      (1 neuron)
+    ○                ○
+    ○                ○
+    ○    ----→      ○     ----→       ○
+    ○                ○
+    ○                ○
+  ReLU             ReLU            Sigmoid
